@@ -1,0 +1,46 @@
+<div class="sidebar position-fixed mx-auto font-weight-bold " style="width: 200px;">
+
+  <a class="logo-wrapper waves-effect">
+      <img src="https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-business-man-399587fe24739d5a-512x512.png" class="img-fluid" alt="">
+ <span class="row justify-content-center" style="color: #7b7370;">Dilupa Sampath</span>
+    </a>
+    <div class="row offset-md-0">
+      <div class="col col-sm-3 blue-text">
+        Posts
+        <span class="row offset-md-4 grey-text">
+          120
+        </span>
+      </div>
+      <div class="col col-sm-3 blue-text">
+        Votes  
+        <span class="row offset-md-4 grey-text">
+          400
+        </span>
+      </div>
+      <div class="col col-sm-3 blue-text   ">
+        Followers
+        <span class="row offset-md-9 grey-text">
+          80
+        </span>
+      </div>
+      
+    </div>
+
+  <div class="list-group list-group-flush">
+
+      <a routerLink="postItem"  routerLinkActive="active" class="list-group-item list-group-item-action waves-effect">
+          <i class="fa fa-id-badge mr-3"></i>Profile
+      </a>
+      <a routerLink="profiles/profile1" routerLinkActive="active"  class="list-group-item list-group-item-action waves-effect">
+          <i class="fa fa-address-card mr-3"></i>My Wall</a>
+      <a routerLink="tables/table1" routerLinkActive="active"  class="list-group-item list-group-item-action waves-effect">
+          <i class="fa fa-cogs mr-3"></i>Settings</a>
+      <a routerLink="maps/map1" routerLinkActive="active"  class="list-group-item list-group-item-action waves-effect">
+          <i class="fa fa-map mr-3"></i>Something</a>
+      <!-- <a routerLink="nonExistingPath" routerLinkActive="active"   class="list-group-item list-group-item-action waves-effect">
+          <i class="fa fa-exclamation mr-3"></i>404</a> -->
+
+  </div>
+</div>
+
+<router-outlet></router-outlet>
