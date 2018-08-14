@@ -6,10 +6,16 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SidenavBarComponent } from './components/sidenav-bar/sidenav-bar.component';
 import { PostItemComponent } from './components/post-item/post-item.component';
+import { NewsFeedComponent } from './components/news-feed/news-feed.component';
 const appRouts:Routes=[
   
   {
-    path:'postItem',component:PostItemComponent
+    path:'postItem',component:PostItemComponent,
+    
+  }
+  ,
+  {
+     path:'newsFeed' ,  component:NewsFeedComponent
   }
 ];
 
@@ -19,7 +25,8 @@ const appRouts:Routes=[
     AppComponent,
     NavBarComponent,
     SidenavBarComponent,
-    PostItemComponent
+    PostItemComponent,
+    NewsFeedComponent
   ],
   imports: [
     BrowserModule,
