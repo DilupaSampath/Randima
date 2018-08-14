@@ -7,6 +7,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SidenavBarComponent } from './components/sidenav-bar/sidenav-bar.component';
 import { PostItemComponent } from './components/post-item/post-item.component';
 import { NewsFeedComponent } from './components/news-feed/news-feed.component';
+import { HttpClientModule } from '@angular/common/http';
 const appRouts:Routes=[
   
   {
@@ -33,7 +34,8 @@ const appRouts:Routes=[
     RouterModule.forRoot(
       appRouts
     ),
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    HttpClientModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],

@@ -1,3 +1,9 @@
+.table-wrapper-scroll-y {
+
+    max-height: 200px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
 .primary-text {
     color: white; }
     .mt-190 {
@@ -22,7 +28,12 @@
    .pd-10{
     padding-bottom: 22px;  
     }
-
+.table-wrapper-scroll-y {
+  display: block;
+  max-height: 200px;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
     /////////////////////////////////////////
 
 
@@ -137,3 +148,6 @@
     @media only screen and (min-width:850px){
       body{padding:0 80px}
     }
+    ////////////////////
+
+    

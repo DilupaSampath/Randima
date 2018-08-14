@@ -7,7 +7,7 @@
 
                         <div class="row">
                             <div class="col col-sm-4" style="margin-top: -12px">
-                                    <button class="btn btn-primary"><i class="fa fa-pencil-square-o"></i> New Post</button>
+                                    <button class="waves-light" type="button" data-toggle="modal" data-target="#postModal" (click)="fluidRight3.show()" mdbWavesEffect><i class="fa fa-pencil-square-o"></i> New Post</button>
                             </div>
                             <div class="col">
                             <select class="browser-default custom-select mb-4 form-control ">
@@ -45,7 +45,7 @@
 
 <div class="container offset-lg-0" >
     <div class="row  mt-190 scroll-box offset-sm-2"> 
-        <div class="col col-sm-4 offset-sm-1 pd-10">
+        <div class="col col-sm-4 offset-sm-1 pd-10" *ngFor="let post of Posts">
             <!-- Card -->
 <div class="card">
 
@@ -61,9 +61,9 @@
         <div class="card-body">
       
           <!-- Title -->
-          <h4 class="card-title">Card title</h4>
+          <h4 class="card-title">{{ post.title }}</h4>
           <!-- Text -->
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">{{post.body}}</p>
           <!-- Button -->
         
       
@@ -71,156 +71,30 @@
         <div class="card-footer px-1 mdb-color grey lighten-2">
 
 <!-- /// -->
-<span color="primary" class="waves-light" type="button" (click)="test.toggle()" mdbWavesEffect><i class="fa fa-hand-o-down" aria-hidden="true"></i> &nbsp; View Comments</span  >
+<span color="primary" class="waves-light" type="button" data-toggle="modal" data-target="#commentsModal" (click)="fluidRight2.show()" mdbWavesEffect><i class="fa fa-hand-o-down" aria-hidden="true"></i> &nbsp; View Comments</span  >
 
 
 <!-- //// -->
                 <span class="float-right">
-                  <a data-toggle="tooltip" data-placement="top" title="Add to Cart">
-                    <i class="fa fa-shopping-cart grey-text ml-3"></i>
+                  <a data-toggle="tooltip" data-placement="top" title="Like">
+                    <i class="fa fa-thumbs-up grey-text ml-3"></i>
                   </a>
-                  <a data-toggle="tooltip" data-placement="top" title="Share">
-                    <i class="fa fa-share-alt grey-text ml-3"></i>
+                  <a data-toggle="tooltip" data-placement="top" title="UnLike">
+                    <i class="fa fa-thumbs-down grey-text ml-3"></i>
                   </a>
                   <a class="" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
                     <i class="fa fa-heart red-text  ml-3"></i>
                   </a>
                 </span>
               </div>
-              <div class="" [mdbCollapse]="isCollapsed" #test="bs-collapse">
-                  <div class="card news">
-                      
-                                <!-- Label -->
-                                <div class="label">
-                                  <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-1-mini.jpg" class="rounded-circle z-depth-1-half">
-                                </div>
-                      
-                                <!-- Excerpt -->
-                                <div class="excerpt">
-                      
-                                  <!-- Brief -->
-                                  <div class="brief">
-                                    <a class="name">John Doe</a> Realy good post..!
-                                    <div class="blue-grey-text">1 hour ago</div>
-                                  </div>
-                      
-                                  <!-- Feed footer -->
-                                  <div class="feed-footer">
-                                    <!-- <a class="comment"  >Reply</a> &middot; -->
-                                    <a class="btn-floating btn-lg purple-gradient" data-toggle="modal" data-target="#basicExampleModal" (click)="fluidRight1.show()"><i class="fa fa-reply-all"></i></a>
-                                    <a class="thumbs" data-toggle="tooltip" data-placement="top" title="I like it">
-                                      <i class="fa fa-thumbs-up"></i>
-                                    </a>
-                                    <a class="thumbs" data-toggle="tooltip" data-placement="top" title="I don't like it">
-                                      <i class="fa fa-thumbs-down"></i>
-                                    </a>
-                                    
-                                  </div>
-                                  <!-- Feed footer -->
-                      
-                                </div>
-                                <!-- Excerpt -->
-<!--                       
-<button type="button" class="btn btn-primary" >
-    Launch demo modal
-  </button> -->
-
-  
-                              </div>
-              </div>
+              
       </div>
       <!-- Card -->
       
         </div>
 
 
-
-        <div class="col col-sm-4 offset-sm-1">
-            <!-- Card -->
-<div class="card">
-
-        <!-- Card image -->
-        <div class="view overlay">
-          <img class="card-img-top" height="200"   src="https://mdbootstrap.com/img/Photos/Others/images/81.jpg" alt="Card image cap">
-          <a href="#!">
-            <div class="mask rgba-white-slight"></div>
-          </a>
-        </div>
-      
-        <!-- Card content -->
-        <div class="card-body">
-      
-          <!-- Title -->
-          <h4 class="card-title">Card title</h4>
-          <!-- Text -->
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <!-- Button -->
-        
-      
-        </div>
-        <div class="card-footer px-1">
-                <span class="float-left font-weight-bold">
-                  <strong>89$</strong>
-                </span>
-                <span class="float-right">
-                  <a data-toggle="tooltip" data-placement="top" title="Add to Cart">
-                    <i class="fa fa-shopping-cart grey-text ml-3"></i>
-                  </a>
-                  <a data-toggle="tooltip" data-placement="top" title="Share">
-                    <i class="fa fa-share-alt grey-text ml-3"></i>
-                  </a>
-                  <a class="" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
-                    <i class="fa fa-heart grey-text ml-3"></i>
-                  </a>
-                </span>
-              </div>
-      
-      </div>
-      <!-- Card -->
-        </div>
-        <div class="col col-sm-4 offset-sm-1">
-            <!-- Card -->
-<div class="card">
-
-        <!-- Card image -->
-        <div class="view overlay">
-          <img class="card-img-top" height="200"   src="https://mdbootstrap.com/img/Photos/Others/images/81.jpg" alt="Card image cap">
-          <a href="#!">
-            <div class="mask rgba-white-slight"></div>
-          </a>
-        </div>
-      
-        <!-- Card content -->
-        <div class="card-body">
-      
-          <!-- Title -->
-          <h4 class="card-title">Card title</h4>
-          <!-- Text -->
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <!-- Button -->
-        
-      
-        </div>
-        <div class="card-footer px-1">
-                <span class="float-left font-weight-bold">
-                  <strong>89$</strong>
-                </span>
-                <span class="float-right">
-                  <a data-toggle="tooltip" data-placement="top" title="Add to Cart">
-                    <i class="fa fa-shopping-cart grey-text ml-3"></i>
-                  </a>
-                  <a data-toggle="tooltip" data-placement="top" title="Share">
-                    <i class="fa fa-share-alt grey-text ml-3"></i>
-                  </a>
-                  <a class="" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
-                    <i class="fa fa-heart grey-text ml-3"></i>
-                  </a>
-                </span>
-              </div>
-      
-      </div>
-      <!-- Card -->
-        </div>
+       
     </div>
 </div>
 
@@ -234,7 +108,7 @@
 
 
 
-<div  mdbModal #fluidRight1="mdb-modal" class="modal fade " id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+<div  mdbModal #fluidRight1="mdb-modal" class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
     
               <div class="modal-dialog modal-side modal-top-right" role="document">
                   <div class="modal-content">
@@ -273,3 +147,180 @@
                 </a>
            
         </div>
+
+
+
+
+
+
+<!-- Central Modal Medium Success -->
+<div mdbModal #fluidRight2="mdb-modal" class="modal fade" id="commentsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <div class="modal-dialog modal-lg modal-success" role="document">
+        <!--Content-->
+     
+        <div class="modal-content ">
+            <!--Header-->
+            <div class="modal-header ">
+                <p class="heading lead">Comments</p>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="text-center">
+                    <div class="table-wrapper-scroll-y">
+
+                        <table class="table">
+                    
+                            <!-- <a class="thumbs" data-toggle="tooltip" data-placement="top" title="I like it">
+                                <i class="fa fa-thumbs-up"></i>
+                              </a>
+                              <a class="thumbs" data-toggle="tooltip" data-placement="top" title="I don't like it">
+                                <i class="fa fa-thumbs-down"></i>
+                              </a> -->
+
+                          <tbody>
+                            <tr *ngFor="let comment of comments">
+                              <th scope="row">
+                                  <div class="label">
+                                      <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-1-mini.jpg" class="rounded-circle z-depth-1-half">
+                                    </div>
+                              </th>
+                              <td>
+                                  <div class="excerpt" >
+              
+                                      <!-- Brief -->
+                                      <div class="brief">
+                                        <a class="name">John Doe</a> Realy good post..!
+                                        <div class="blue-grey-text">1 hour ago</div>
+                                      </div>
+                          
+                                      <!-- Feed footer -->
+                                      <div class="feed-footer" >
+                                        <!-- <a class="comment"  >Reply</a> &middot; -->
+                                        <a class="btn-floating btn-lg purple-gradient" class="waves-light" type="button" (click)="test.toggle()" mdbWavesEffect><i class="fa fa-reply-all"></i></a>
+                                        
+            
+                                      </div>
+                                      <tr  [mdbCollapse]="isCollapsed" #test="bs-collapse">
+
+                                          <div *ngFor="let comment of comments"  class="container">
+                                            <div class="row">
+                                            <div class="col pd-10">
+                                                <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-1-mini.jpg" class="rounded-circle z-depth-half">
+                                            </div>
+                                            <div class="col">
+                                                <label for="">sssssssssssss</label>
+                                            </div>
+                                          </div>
+                                           
+                                              
+                                            </div>
+                                            <div class="container">
+                                                <div class="row">
+                                                <div class="col pd-10">
+                                                    <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-1-mini.jpg" class="rounded-circle z-depth-half">
+                                                </div>
+                                                <div class="col">
+                                                    <input type="text" id="exampleForm2" class="form-control">
+                                                </div>
+                                              </div>
+                                               
+                                                  
+                                                </div>
+                                           
+
+                                      </tr>
+                                      <!-- Feed footer -->
+                          
+                                    </div>
+                                    
+                              </td>
+                             
+                            </tr>
+                           
+                          </tbody>
+                        </table>
+                      
+                      </div>
+                </div>
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer justify-content-center">
+                <a type="button" class="btn btn-primary">Get it now <i class="fa fa-diamond ml-1"></i></a>
+                <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">No, thanks</a>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!-- Central Modal Medium Success-->
+
+<!-- Button trigger modal -->
+<div class="text-center">
+    <a href="" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#centralModalSuccess">Launch Modal Success <i class="fa fa-eye ml-1"></i></a>
+</div>
+
+<!-- Modal: modalPoll -->
+<div mdbModal #fluidRight3="mdb-modal" class="modal fade right" id="postModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false">
+  <div class="modal-dialog cascading-modal modal-avatar  modal-full-height modal-right  modal-info" role="document">
+    <div class="modal-content container">
+      <!--Header-->
+      <div class="modal-header">
+          <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg" alt="avatar" class="rounded-circle img-responsive">
+      </div>
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <!-- <i class="fa fa-file-text-o fa-4x mb-3 animated rotateIn"></i> -->
+          <p>
+            <strong>Post Your Comment</strong>
+          </p>
+          <!-- <p>Have some ideas how to improve our product?
+            <strong>Give us your feedback.</strong>
+          </p> -->
+        </div>
+
+        <hr>
+
+        <!-- Radio -->
+        <!-- <p class="text-center">
+          <strong>Your rating</strong>
+        </p> -->
+       <form action="">
+        <div class="form-group input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+            </div>
+            
+            <div class="custom-file">
+              <input name="foo" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+              <label class="custom-file-label" for="inputGroupFile01">Upload Picture</label>
+            </div>
+          </div>
+        
+         <div class="form-group">
+            <input class="form-control" type="text" placeholder="Title">
+         </div>
+         <div class="form-group">
+            <input type="date"  [(ngModel)]="assingDate" id="Assing" class="form-control" mdbInputDirective [ngModelOptions]="{standalone: true}" value="{{assingDate}}">
+         </div>
+        
+          
+
+          <div class="form-group">
+            
+              <textarea placeholder="Description" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+          </div>
+          <button type="button" class="btn btn-outline-primary waves-effect"> <i class="fa fa-paper-plane ml-1"></i>Post</button>
+          <button type="button" class="btn btn-outline-primary waves-effect"> <i class="fa fa-paper-plane ml-1"></i>Cancel</button>
+  
+        </form>
+      <!--Footer-->
+
+ 
+     
+    </div>
+  </div>
+</div>
+<!-- Modal: modalPoll -->
