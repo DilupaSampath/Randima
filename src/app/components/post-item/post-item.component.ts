@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import * as AOS from 'aos';
 
 interface Posts {
   user:string;
@@ -21,6 +22,7 @@ export class PostItemComponent implements OnInit {
   }
   comments:any[];
   ngOnInit() {
+    AOS.init();
     this.getPosts().subscribe(
       (data: any[]) => {
         console.log("an init works--> " + JSON.stringify(data));
@@ -35,7 +37,7 @@ export class PostItemComponent implements OnInit {
     return this.http.get('http://127.0.0.1:3000/postsModel/posts');
   }
   asd(){
-    jQuery('#input_starttime').slideToggle({});
+   
   }
 
 }
