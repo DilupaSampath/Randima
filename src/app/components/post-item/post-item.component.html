@@ -44,10 +44,10 @@
 
 
 <div class="container offset-lg-0" >
-    <div class="row  mt-190 scroll-box offset-sm-2"> 
-        <div class="col col-sm-4 offset-sm-1 pd-10" *ngFor="let post of Posts" data-aos="fade-right">
+    <div class="row  mt-190 scroll-box offset-sm-2" data-aos="fade-right"> 
+        <div class="col col-sm-4 offset-sm-1 pd-10" *ngFor="let post of Posts" >
             <!-- Card -->
-<div class="card">
+<div class="card" >
 
         <!-- Card image -->
         <div class="view overlay">
@@ -288,31 +288,32 @@
           <strong>Your rating</strong>
         </p> -->
        <form action="">
+         
         <div class="form-group input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
             </div>
             
             <div class="custom-file">
-              <input name="foo" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+              <input  name="foo" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
               <label class="custom-file-label" for="inputGroupFile01">Upload Picture</label>
             </div>
           </div>
         
          <div class="form-group">
-            <input class="form-control" type="text" placeholder="Title">
+            <input [(ngModel)]="postTitle" [ngModelOptions]="{standalone: true}" class="form-control" type="text" placeholder="Title">
          </div>
          <div class="form-group">
-            <input type="date"  [(ngModel)]="assingDate" id="Assing" class="form-control" mdbInputDirective [ngModelOptions]="{standalone: true}" value="{{assingDate}}">
+            <input type="date"  [(ngModel)]="postDate" [ngModelOptions]="{standalone: true}" id="Assing" class="form-control" mdbInputDirective [ngModelOptions]="{standalone: true}" value="{{assingDate}}">
          </div>
         
           
 
           <div class="form-group">
             
-              <textarea placeholder="Description" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+              <textarea [(ngModel)]="postDescription" [ngModelOptions]="{standalone: true}" placeholder="Description" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
           </div>
-          <button type="button" class="btn btn-outline-primary waves-effect"> <i class="fa fa-paper-plane ml-1"></i>Post</button>
+          <button type="button" id="btn1" class="btn btn-outline-primary waves-effect"  (click)="addPost()" > <i class="fa fa-paper-plane ml-1"></i>Post</button>
           <button type="button" class="btn btn-outline-primary waves-effect"> <i class="fa fa-paper-plane ml-1"></i>Cancel</button>
   
         </form>
@@ -324,3 +325,10 @@
   </div>
 </div>
 <!-- Modal: modalPoll -->
+
+<div id="toast1">
+    <div id="img">
+        <i class="fa fa-check" aria-hidden="true"></i>
+    </div>
+    <div id="desc">Success Fully Assinged...!</div>
+</div>

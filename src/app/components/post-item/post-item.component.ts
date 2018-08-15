@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as AOS from 'aos';
+import * as $ from 'jquery'
+import swal from 'sweetalert';
 
 interface Posts {
   user:string;
@@ -15,17 +17,33 @@ interface Posts {
 })
 export class PostItemComponent implements OnInit {
   Posts:Posts[];
- 
+  user:any;
+  postTitle:any;
+  postDate:any;
+  postDescription:any;
+
 
   constructor(private http: HttpClient) { 
     this.comments=[{ name:'saa'},{ name:'saa'},{ name:'saa'},{ name:'saa'},{ name:'saa'}];
   }
   comments:any[];
   ngOnInit() {
+    swal("Hello world!");
+$(document).ready(function(){
+  $('#btn1').click(function(){
+  
+  
+      // alert('sad');
+      
+  
+  
+  });
+});
+
     AOS.init();
     this.getPosts().subscribe(
       (data: any[]) => {
-        console.log("an init works--> " + JSON.stringify(data));
+        console.log("an init works--> " +data.length);
         this.Posts = data;
        
       }
@@ -39,5 +57,29 @@ export class PostItemComponent implements OnInit {
   asd(){
    
   }
-
+addPost(){
+  console.log("click");
+ 
+  let postData= {
+    "user":"Dilupa Sampath",
+    "date":this.postDate,
+    "title":this.postTitle,
+    "body":this.postDescription
+    }
+  this.http.post('http://localhost:3000/postsModel/posts',postData).subscribe((data:any)=>{
+    console.log(data);
+    this.getPosts().subscribe(
+      (data: any[]) => {
+        console.log("an init works--> " + JSON.stringify(data));
+        this.Posts = data;
+        this.launch_toast2();
+      }
+    );
+  });
+}
+launch_toast2() {
+  var x = document.getElementById("toast1")
+  x.className = "show";
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+}
 }
