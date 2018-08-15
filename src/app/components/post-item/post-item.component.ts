@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as AOS from 'aos';
 import * as $ from 'jquery'
-import swal from 'sweetalert';
-
 interface Posts {
   user:string;
   date:string;
   title: string;
   body: string;
 }
+// @HostListener('window:scroll', ['$event']) 
 @Component({
   selector: 'app-post-item',
   templateUrl: './post-item.component.html',
@@ -25,10 +24,13 @@ export class PostItemComponent implements OnInit {
 
   constructor(private http: HttpClient) { 
     this.comments=[{ name:'saa'},{ name:'saa'},{ name:'saa'},{ name:'saa'},{ name:'saa'}];
+    
   }
+
   comments:any[];
   ngOnInit() {
-    swal("Hello world!");
+
+
 $(document).ready(function(){
   $('#btn1').click(function(){
   
@@ -41,6 +43,8 @@ $(document).ready(function(){
 });
 
     AOS.init();
+    
+    //
     this.getPosts().subscribe(
       (data: any[]) => {
         console.log("an init works--> " +data.length);
@@ -51,6 +55,7 @@ $(document).ready(function(){
     this.comments=[{ name:'saa'},{ name:'saa'},{ name:'saa'},{ name:'saa'}];
 // console.log(    this.comments.length)
   }
+ 
   getPosts() {
     return this.http.get('http://127.0.0.1:3000/postsModel/posts');
   }
@@ -61,11 +66,12 @@ addPost(){
   console.log("click");
  
   let postData= {
-    "user":"Dilupa Sampath",
-    "date":this.postDate,
-    "title":this.postTitle,
-    "body":this.postDescription
+    'user':"Dilupa Sampath",
+    'date':this.postDate,
+    'title':this.postTitle,
+    'body':this.postDescription
     }
+    console.log(postData);
   this.http.post('http://localhost:3000/postsModel/posts',postData).subscribe((data:any)=>{
     console.log(data);
     this.getPosts().subscribe(
