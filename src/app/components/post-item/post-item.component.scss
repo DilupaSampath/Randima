@@ -16,10 +16,18 @@
 .primary-text {
     color: white; }
     .mt-190 {
-        margin-top: 190px !important;
+        margin-top: 11.3% !important;
+      }
+      .mt-32{
+        margin-top: -28px;
+      }
+      .m
+      {
+        margin: -24px;
+        margin-left: -30px;
       }
       .mt-70 {
-        margin-top: 70px !important;
+        margin-top: 55px !important;
       }
       
       .fa-search{
@@ -52,6 +60,19 @@
         text-align: center;
         color: white;
         font-family: cursive;
+      }
+      .fixed-plugin1 {
+        position: fixed;
+        top: 102px;
+        right: 0;
+        width: 60px;
+        background: #e91e63ed;
+       
+        border-radius: 8px 0 0 8px;
+        text-align: center;
+        color: white;
+        box-shadow: 7px 11px 7px 1px rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+      
       }
       .modal .modal-dialog.modal-top-right {
         width: 440px

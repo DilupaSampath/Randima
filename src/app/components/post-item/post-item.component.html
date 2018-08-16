@@ -6,10 +6,10 @@
                     <form class="text-center ">
 
                         <div class="row">
-                            <div class="col col-sm-4" style="margin-top: -12px" data-aos="fade-right" data-aos-offset="200" data-aos-delay="500">
+                            <!-- <div class="col col-sm-4" style="margin-top: -12px" data-aos="fade-right" data-aos-offset="200" data-aos-delay="500">
                                     <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#postModal" (click)="fluidRight3.show()" mdbWavesEffect><i class="fa fa-pencil-square-o"></i> New Post</button>
-                            </div>
-                            <div class="col" data-aos="fade-right">
+                            </div> -->
+                            <!-- <div class="col" data-aos="fade-right">
                             <select class="browser-default custom-select mb-4 form-control ">
 
                                 <option value="1" >Related Area</option>
@@ -19,11 +19,11 @@
                                 <option value="5">Feature request</option>
                             </select>
                             
-                        </div>
-                        <div class="col" style="margin-top: -22px;" data-aos="fade-left"  data-aos-delay="500">
+                        </div> -->
+                        <div class="col" style="margin-top: -2.5%;margin-left: -14.1%;" data-aos="fade-left"  data-aos-delay="500">
                             <form class="form-inline md-form form-sm ">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                                <input class="form-control form-control-sm ml-3 w-95" type="text" placeholder="Search" aria-label="Search">
+                                <i class="fa fa-search" aria-hidden="true" style="margin-top: -1.2%;"></i>
+                                &nbsp;<input class="form-control form-control-sm ml-" type="text" placeholder="Search" aria-label="Search" style="    width: 35%;">
                             </form>
                         </div>
                         </div>
@@ -44,39 +44,42 @@
     
 
 
-<div class="container offset-lg-0"  data-aos="fade-up" data-aos-delay="300">
-    <div class="row  mt-190 scroll-box offset-sm-3" style="background: #9da1a247;margin-left: 206px;" > 
-        <div class="col col-sm-4 offset-sm-1 pd-10 " *ngFor="let post of Posts"  >
+<div class="container   offset-lg-0"  data-aos="fade-up" data-aos-delay="300">
+    <div class="row  mt-190 scroll-box offset-md-2" style="background: #9da1a247; width:95%;box-shadow: -1px 11px 7px 1px rgba(0, 0, 0, 0.16), inset 11px 8px 20px 0px rgba(0, 0, 0, 0.12);" > 
+      <div>
+        
+      </div>  
+      <div class="col col-sm-4 offset-sm-1  " *ngFor="let post of Posts" style="margin-top: 20px" >
             <!-- Card -->
-<div class="card "  >
-
+<div class="card offset-sm-1 " style="width: 108%;box-shadow: 7px 11px 7px 1px rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);    margin-top: 2.7%;margin-bottom: 0.6%;" >
+    <div class="card-header">
+        <div class="label m">
+            <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-1-mini.jpg" class="rounded-circle z-depth-1-half" >
+          <span>Dilupa Sampath</span>
+          </div>
+          <div class="card-body" >
+              <!-- Text -->
+              <p class="card-text">{{post.body}}</p>
+              <!-- Button -->   
+            </div>
         <!-- Card image -->
-        <div class="view overlay"   >
-          <img class="card-img-top" height="200"   src="https://mdbootstrap.com/img/Photos/Others/images/81.jpg" alt="Card image cap">
+        <div class="view overlay mt-31"   >
+          <img class="card-img-top"  src="https://mdbootstrap.com/img/Photos/Others/images/81.jpg" alt="Card image cap">
           <a href="#!">
             <div class="mask rgba-white-slight"></div>
           </a>
         </div>
-      
+      </div>
         <!-- Card content -->
-        <div class="card-body" >
-      
-          <!-- Title -->
-          <h4 class="card-title">{{ post.title }}</h4>
-          <!-- Text -->
-          <p class="card-text">{{post.body}}</p>
-          <!-- Button -->
         
-      
-        </div>
-        <div class="card-footer px-1 mdb-color grey lighten-2">
+        <div class="card-footer px-1 ">
 
 <!-- /// -->
-<span color="primary" class="waves-light" type="button" data-toggle="modal" data-target="#commentsModal" (click)="fluidRight2.show()" mdbWavesEffect><i class="fa fa-hand-o-down" aria-hidden="true"></i> &nbsp; View Comments</span  >
+<span color="primary justify-content-center" class="waves-light" type="button" data-toggle="modal" data-target="#commentsModal" (click)="fluidRight2.show()" mdbWavesEffect><i class="fa fa-hand-o-down" aria-hidden="true"></i> &nbsp; View Comments</span  >
 
 
 <!-- //// -->
-                <span class="float-right">
+                <span class="">
                   <a data-toggle="tooltip" data-placement="top" title="Like">
                     <i class="fa fa-thumbs-up grey-text ml-3"></i>
                   </a>
@@ -86,6 +89,10 @@
                   <a class="" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
                     <i class="fa fa-heart red-text  ml-3"></i>
                   </a>
+                  <span class="badge badge-info rounded-circle offset-sm-1">
+                    12
+                  </span>
+                  
                 </span>
               </div>
               
@@ -141,13 +148,21 @@
             
         </div>
 
-        <div class="fixed-plugin faa-horizontal faa-slow animated ">
+        <div class="fixed-plugin faa-horizontal faa-slow animated  " >
            
-                <a data-toggle="modal" data-target="#notificationModal" (click)="fluidRight4.show()" mdbWavesEffect>
-                    <i class="fa fa-angle-double-left" aria-hidden="true"></i>&nbsp;<i class="fa fa-bell" aria-hidden="true"></i>  
+                <a data-toggle="modal" data-target="#notificationModal" (click)="fluidRight4.show()" >
+                    <i class="fa fa-angle-double-left" aria-hidden="true"></i>&nbsp;<i class="fa fa-bell" aria-hidden="true" ></i>  
                 </a>
            
         </div>
+
+        <div class="fixed-plugin1  rounded-circle  " style=" background: #4285f4;   height: 8.5%; margin-top: 31%;margin-right: 10%;" mdbWavesEffect>
+           
+            <a data-toggle="modal" data-target="#postModal" (click)="fluidRight3.show()" >
+               <i class="fa fa-plus"  aria-hidden="true" style="margin-top: 21%; font-size:30px"></i>  
+            </a>
+       
+    </div>
 
 
 
@@ -339,9 +354,9 @@
 </div>
 <!-- Modal: modalPoll -->
 
-<div mdbModal #fluidRight4="mdb-modal" class="modal fade right" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false">
+<div mdbModal #fluidRight4="mdb-modal" class="modal fade right" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false" >
     <div class="modal-dialog cascading-modal modal-full-height modal-right  modal-info" role="document">
-      <div class="modal-content container">
+      <div class="modal-content container scroll-box">
         <!--Header-->
        
         <!--Body-->
@@ -358,19 +373,19 @@
   
           <hr>
 
-          <div class="container scroll-box" style="padding-left: 4px">
-              <div  *ngFor="let comment of comments" class="row align-items-start purple lighten-5" style="width: max-content;    margin-bottom: 5px;">
+          <div class="container" style="padding-left: 0.6%;margin-left: -6%;" >
+              <div  *ngFor="let comment of comments" class="row align-items-start blue lighten-4" style="border-radius: 19px;    box-shadow: 1px 3px 9px 2px rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);width: 125%;margin-top: 1%;    margin-bottom: 3.8%;margin-left: 1%;">
                   <div class="col label text-left">
                     <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-1-mini.jpg" class="rounded-circle z-depth-1-half">
-                    <p class="grey-text">
+                    <p style="font-size: x-small;font-weight: 937;">
 Dilupa Sampath
                     </p>
                 </div>
-                  <div class="col text-left">
+                  <div class="col text-left" style="font-size: small;    font-weight: 450;">
                           Commented on your post
-                      <!-- <p grey-text>
+                      <p class="col" style="font-weight: 700;color: #808080b5;">
                         7 hours ago
-                    </p> -->
+                    </p>
                   </div>
               </div>
           </div>
@@ -397,3 +412,4 @@ Dilupa Sampath
     </div>
     <div id="desc">Post added...!</div>
 </div>
+
