@@ -8,6 +8,7 @@ import { SidenavBarComponent } from './components/sidenav-bar/sidenav-bar.compon
 import { PostItemComponent } from './components/post-item/post-item.component';
 import { NewsFeedComponent } from './components/news-feed/news-feed.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 const appRouts:Routes=[
   
   {
@@ -34,6 +35,7 @@ const appRouts:Routes=[
     RouterModule.forRoot(
       appRouts
     ),
+    FormsModule,
     MDBBootstrapModule.forRoot(),
     HttpClientModule
   ],

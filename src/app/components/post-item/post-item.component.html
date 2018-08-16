@@ -155,15 +155,24 @@
 
 <!-- Central Modal Medium Success -->
 <div mdbModal #fluidRight2="mdb-modal" class="modal fade" id="commentsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-    <div class="modal-dialog modal-lg modal-success" role="document">
+    <div class="modal-dialog modal-notify  modal-lg  modal-warning" role="document">
         <!--Content-->
      
         <div class="modal-content ">
             <!--Header-->
-            <div class="modal-header ">
+            <div class="modal-header">
                 <p class="heading lead">Comments</p>
+    
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
             </div>
-
+            <div class="modal-body">
+                <div class="text-center">
+                    <i class="fa fa-edit fa-3x mb-1 animated rotateIn"></i>
+                </div>
+            </div>
+    
             <!--Body-->
             <div class="modal-body">
                 <div class="text-center">
@@ -221,7 +230,9 @@
                                                     <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-1-mini.jpg" class="rounded-circle z-depth-half">
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text" id="exampleForm2" class="form-control">
+                                                    <input type="text" id="exampleForm2" class="form-control col">
+                                                    <span class=" badge badge-primary">Reply</span>
+
                                                 </div>
                                               </div>
                                                
@@ -247,7 +258,7 @@
 
             <!--Footer-->
             <div class="modal-footer justify-content-center">
-                <a type="button" class="btn btn-primary">Get it now <i class="fa fa-diamond ml-1"></i></a>
+                <a type="button" class="btn btn-primary">OK </a>
                 <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">No, thanks</a>
             </div>
         </div>
@@ -313,7 +324,7 @@
             
               <textarea  [(ngModel)]="postDescription" [ngModelOptions]="{standalone: true}" placeholder="Description" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
           </div>
-          <button type="button" id="btn1" class="btn btn-outline-primary waves-effect"  (click)="addPost();fluidRight3.hide()" > <i class="fa fa-paper-plane ml-1"></i>Post</button>
+          <button type="button" id="btn1" class="btn btn-outline-primary waves-effect"  (click)="addPost()" > <i class="fa fa-paper-plane ml-1"></i>Post</button>
           <button type="button" class="btn btn-outline-primary waves-effect"> <i class="fa  fa-close ml-3"></i>Cancel</button>
   
         </form>
@@ -330,5 +341,5 @@
     <div id="img">
         <i class="fa fa-check" aria-hidden="true"></i>
     </div>
-    <div id="desc">Success Fully Assinged...!</div>
+    <div id="desc">Post added...!</div>
 </div>

@@ -84,8 +84,10 @@ addPost(){
   });
 }
 launch_toast2() {
-  var x = document.getElementById("toast1")
+  var x = document.getElementById("toast1");
+  var y = document.getElementById("postModal")
   x.className = "show";
+  // y.className = "";
   setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
 }
 }
