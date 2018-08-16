@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as AOS from 'aos';
 import * as $ from 'jquery'
+import * as Carousel from 'carousel-js'
 interface Posts {
   user:string;
   date:string;
@@ -29,7 +30,11 @@ export class PostItemComponent implements OnInit {
 
   comments:any[];
   ngOnInit() {
-
+    var carousel = new Carousel({
+      panels: document.getElementsByClassName('carousel-panel')
+  });
+   
+  carousel.goTo(1);
 
 $(document).ready(function(){
   $('#btn1').click(function(){
