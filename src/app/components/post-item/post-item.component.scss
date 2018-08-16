@@ -1,4 +1,13 @@
-.table-wrapper-scroll-y {
+.notify>.table-wrapper-scroll-y {
+    
+    max-height: 400px;
+    max-width: 600px;
+    align-content: left;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+
+.text-center>.table-wrapper-scroll-y {
 
     max-height: 200px;
     overflow-y: auto;
@@ -28,12 +37,7 @@
    .pd-10{
     padding-bottom: 22px;  
     }
-.table-wrapper-scroll-y {
-  display: block;
-  max-height: 200px;
-  overflow-y: auto;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-}
+
     /////////////////////////////////////////
 
 

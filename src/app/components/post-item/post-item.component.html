@@ -18,6 +18,7 @@
                                 <option value="4">Feature request</option>
                                 <option value="5">Feature request</option>
                             </select>
+                            
                         </div>
                         <div class="col" style="margin-top: -22px;" data-aos="fade-left"  data-aos-delay="500">
                             <form class="form-inline md-form form-sm ">
@@ -44,7 +45,7 @@
 
 
 <div class="container offset-lg-0"  data-aos="fade-up" data-aos-delay="300">
-    <div class="row  mt-190 scroll-box offset-sm-2"  > 
+    <div class="row  mt-190 scroll-box offset-sm-3" style="background: #9da1a247;margin-left: 206px;" > 
         <div class="col col-sm-4 offset-sm-1 pd-10 " *ngFor="let post of Posts"  >
             <!-- Card -->
 <div class="card "  >
@@ -142,7 +143,7 @@
 
         <div class="fixed-plugin faa-horizontal faa-slow animated ">
            
-                <a data-toggle="modal" mdbWavesEffect>
+                <a data-toggle="modal" data-target="#notificationModal" (click)="fluidRight4.show()" mdbWavesEffect>
                     <i class="fa fa-angle-double-left" aria-hidden="true"></i>&nbsp;<i class="fa fa-bell" aria-hidden="true"></i>  
                 </a>
            
@@ -335,8 +336,61 @@
     </div>
   </div>
 </div>
+</div>
 <!-- Modal: modalPoll -->
 
+<div mdbModal #fluidRight4="mdb-modal" class="modal fade right" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false">
+    <div class="modal-dialog cascading-modal modal-full-height modal-right  modal-info" role="document">
+      <div class="modal-content container">
+        <!--Header-->
+       
+        <!--Body-->
+        <div class="modal-body">
+          <div class="text-center">
+            <!-- <i class="fa fa-file-text-o fa-4x mb-3 animated rotateIn"></i> -->
+            <p>
+              <strong>Notifications ({{comments.length}})</strong>
+            </p>
+            <!-- <p>Have some ideas how to improve our product?
+              <strong>Give us your feedback.</strong>
+            </p> -->
+          </div>
+  
+          <hr>
+
+          <div class="container scroll-box" style="padding-left: 4px">
+              <div  *ngFor="let comment of comments" class="row align-items-start purple lighten-5" style="width: max-content;    margin-bottom: 5px;">
+                  <div class="col label text-left">
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-1-mini.jpg" class="rounded-circle z-depth-1-half">
+                    <p class="grey-text">
+Dilupa Sampath
+                    </p>
+                </div>
+                  <div class="col text-left">
+                          Commented on your post
+                      <!-- <p grey-text>
+                        7 hours ago
+                    </p> -->
+                  </div>
+              </div>
+          </div>
+  
+          <!-- Radio -->
+          <!-- <p class="text-center">
+            <strong>Your rating</strong>
+          </p> -->
+         
+        <!--Footer-->
+  
+   
+       
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+<!-- tost -->
 <div id="toast1">
     <div id="img">
         <i class="fa fa-check" aria-hidden="true"></i>
